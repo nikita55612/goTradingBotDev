@@ -1,0 +1,2 @@
+# goTradingBotDev
+Торговый бот
