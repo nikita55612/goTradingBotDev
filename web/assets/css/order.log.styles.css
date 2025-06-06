@@ -1,0 +1,113 @@
+body {
+	font-family: var(--font-main), Arial, sans-serif;
+	background-color: var(--bg);
+	color: var(--fg);
+	margin: 20px;
+}
+
+.main-content {
+	max-width: 1600px;
+	margin: auto;
+}
+
+h1 {
+	color: var(--fg);
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+}
+
+th,
+td {
+	padding: 15px 9px;
+	text-align: left;
+}
+
+th {
+	background-color: var(--bg1);
+}
+
+td {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 220px;
+}
+
+th[data-sort-key] {
+	cursor: pointer;
+}
+
+tr:nth-child(even) {
+	background-color: var(--bg1);
+}
+
+th:last-child {
+	text-align: center;
+}
+
+td:last-child {
+	text-align: center;
+}
+
+td:first-child {
+	text-align: center;
+}
+
+.symbol-icon {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	object-fit: contain;
+	background: var(--bg1);
+}
+
+.symbol-name-wrapper a {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.symbol-lname {
+	font-weight: bold;
+}
+
+.symbol-sname {
+	color: var(--niagara);
+}
+
+.order-buy {
+	color: var(--green);
+	font-weight: bold;
+}
+
+.order-sell {
+	color: var(--red);
+	font-weight: bold;
+}
+
+.order-status-rejected {
+	color: var(--red);
+	font-weight: bold;
+}
+
+.order-status-placed {
+	color: var(--yellow);
+	font-weight: bold;
+}
+
+.order-status-closed {
+	color: var(--green);
+	font-weight: bold;
+}
+
+/* .order-qty {
+	font-weight: bold;
+}
+
+.exec-value {
+	font-weight: bold;
+} */

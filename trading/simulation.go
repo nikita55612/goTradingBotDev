@@ -1,0 +1,5 @@
+package trading
+
+func Simulation() {
+
+}

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Roboto+Mono:wght@400;500&family=Share+Tech+Mono&display=swap');
+
+:root {
+    --fg: #e4e4ef;
+    --fg-1: #f4f4ff;
+    --fg-2: #f5f5f5;
+    --white: #ffffff;
+    --black: #000000;
+    --bg-1: #101010;
+    --bg: #181818;
+    --bg1: #282828;
+    --bg2: #453d41;
+    --bg3: #484848;
+    --bg4: #52494e;
+    --red-1: #c73c3f;
+    --red: #f43841;
+    --red1: #ff4f58;
+    --green: #73c936;
+    --yellow: #ffdd33;
+    --brown: #cc8c3c;
+    --quartz: #95a99f;
+    --niagara-2: #303540;
+    --niagara-1: #565f73;
+    --niagara: #96a6c8;
+    --wisteria: #9e95c7;
+    --font-main: 'IBM Plex Mono', monospace;
+    --font-secondary: 'Roboto Mono', monospace;
+    --font-tech: 'Share Tech Mono', monospace;
+}

@@ -1,0 +1,394 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    color: var(--fg);
+    background: var(--bg);
+    font-family: var(--font-main);
+}
+
+hr {
+    height: 1px;
+    margin: 8px 0;
+    border: 0;
+    padding: 0;
+    border-top: 1px solid var(--quartz);
+}
+
+.ticker,
+.rank,
+.fg-score {
+  font-family: var(--font-tech);
+}
+
+#symbol-input,
+.interval-btn,
+.change-label,
+.change-value,
+.fg-change-label,
+.fg-change-value,
+.crypto-list-header,
+.crypto-item {
+  font-family: var(--font-secondary);
+}
+
+.left-section {
+    flex: 1;
+    height: 100%;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.right-section {
+    width: 20%;
+    padding: 18px;
+    overflow: auto;
+    background: var(--bg1);
+}
+
+#symbol-input {
+    width: calc(100% - 24px);
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--fg);
+    outline: none;
+    border-radius: 4px;
+    background: var(--bg3);
+    border: 2px solid var(--bg);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#symbol-input:focus {
+    border-color: var(--niagara-1);
+    box-shadow: 0 0 0 2px rgba(150, 166, 200, 0.2);
+}
+
+.symbol-chart-block,
+.signals-chart-container {
+    border-radius: 4px;
+    border: 2px solid var(--bg3);
+}
+
+.symbol-chart-block {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.symbol-chart-block canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    padding-right: 32px;
+}
+
+.signals-chart-container {
+    flex: 0 0 30%;
+    min-height: 300px;
+    margin-top: 16px;
+    position: relative;
+}
+
+.signals-chart-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#signals-chart {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    padding-right: 32px;
+}
+
+.interval-switcher {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    display: flex;
+    gap: 4px;
+}
+
+.interval-btn {
+    padding: 3px 9px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    border-radius: 2px;
+    color: var(--fg);
+    background: var(--bg3);
+    border: 1px solid var(--bg4);
+    transition: all 0.2s;
+}
+
+.interval-btn:hover {
+    background: var(--bg4);
+    border-color: var(--niagara-1);
+}
+
+.interval-btn.active {
+    color: var(--white);
+    background: var(--niagara-1);
+    border-color: var(--niagara);
+}
+
+.hidden {
+    display: none;
+}
+
+#symbol-info,
+#fear-and-greed,
+#crypto-list {
+    margin-top: 20px;
+    border-radius: 6px;
+    background: var(--bg3);
+}
+
+#symbol-info {
+    padding: 12px;
+}
+
+.symbol-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.rs-child h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--fg-1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: var(--font-tech);
+}
+
+.ticker {
+    padding: 3px 8px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    background: var(--bg2);
+}
+
+.rank {
+    padding: 3px 8px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: var(--niagara);
+    background: var(--niagara-2);
+}
+
+.symbol-icon {
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    margin-left: auto;
+    border-radius: 50%;
+    object-fit: contain;
+    background: var(--bg1);
+}
+
+.price-change-grid,
+.signals-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.change-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.change-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--quartz);
+}
+
+.change-value {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.positive {
+    color: var(--green);
+    background: rgba(115, 201, 54, 0.12);
+}
+
+.negative {
+    color: var(--red);
+    background: rgba(244, 56, 65, 0.12);
+}
+
+.neutral {
+    color: var(--quartz);
+    background: rgba(149, 169, 159, 0.12);
+}
+
+#crypto-list {
+    height: 456px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.crypto-list-header {
+    display: grid;
+    gap: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--quartz);
+    border-bottom: 1px solid var(--quartz);
+    grid-template-columns: 30px 2fr 1fr 1fr 1fr;
+}
+
+.crypto-list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.crypto-item {
+    display: grid;
+    gap: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    align-items: center;
+    transition: background 0.2s;
+    grid-template-columns: 30px 2fr 1fr 1fr 1fr;
+}
+
+.crypto-item:hover {
+    background: var(--bg4);
+}
+
+.crypto-index {
+    font-weight: bold;
+    text-align: left;
+    color: var(--quartz);
+}
+
+.crypto-symbol {
+    font-weight: bold;
+    color: var(--quartz);
+}
+
+.crypto-name {
+    font-weight: bold;
+}
+
+.crypto-change {
+    font-weight: bold;
+    text-align: right;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+#fear-and-greed {
+    padding: 10px;
+}
+
+.fg-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.fg-score {
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: var(--niagara);
+    background: var(--niagara-2);
+}
+
+.fg-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.fg-scale-container {
+    flex: 1;
+}
+
+.fg-scale {
+    width: 100%;
+    height: 16px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, var(--red), var(--yellow), var(--green));
+}
+
+.fg-indicator {
+    top: 0;
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    background: var(--black);
+    transform: translateX(-50%);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.fg-change-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.fg-change-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--quartz);
+}
+
+.fg-change-value {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Scrollbar */
+#crypto-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#crypto-list::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background: var(--bg2);
+}
+
+#crypto-list::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: var(--bg4);
+}
+
+#crypto-list::-webkit-scrollbar-thumb:hover {
+    background: var(--niagara-1);
+}

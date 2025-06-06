@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal</title>
+    <link rel="icon" href="./assets/icons/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/terminal.styles.css">
+    <script src="./assets/js/api.client.js"></script>
+    <script src="./assets/js/terminal.charts.js"></script>
+</head>
+
+<body>
+    <div class="left-section">
+        <div class="symbol-chart-block">
+            <div class="interval-switcher">
+                <button class="interval-btn active" data-interval="15m">15m</button>
+                <button class="interval-btn" data-interval="1h">1h</button>
+            </div>
+            <canvas id="symbol-chart"></canvas>
+        </div>
+        <div class="signals-chart-container">
+            <div class="signals-chart-wrapper">
+                <canvas id="signals-chart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="right-section">
+        <div class="symbol-input-block">
+            <input type="text" id="symbol-input" placeholder="Введите символ...">
+        </div>
+        <div id="fear-and-greed" class="hidden rs-child">
+            <div class="fg-header">
+                <h2>FearAndGreed</h2>
+                <div class="fg-score">0</div>
+            </div>
+            <div class="fg-container">
+                <div class="fg-scale-container">
+                    <div class="fg-scale">
+                        <div class="fg-indicator" style="left: 0%"></div>
+                    </div>
+                </div>
+                <div class="fg-change-container">
+                    <span class="fg-change-label">24h</span>
+                    <span class="fg-change-value">0%</span>
+                </div>
+            </div>
+        </div>
+        <div id="symbol-info" class="hidden rs-child">
+            <div class="symbol-header">
+                <h2 id="symbol-name"></h2>
+                <span id="symbol-ticker" class="ticker"></span>
+                <span id="symbol-rank" class="rank"></span>
+                <img id="symbol-icon" class="symbol-icon" src="" alt="Symbol icon">
+            </div>
+            <div class="price-change-grid">
+                <div class="change-item">
+                    <span class="change-label">1h</span>
+                    <span id="change-1h" class="change-value"></span>
+                </div>
+                <div class="change-item">
+                    <span class="change-label">24h</span>
+                    <span id="change-24h" class="change-value"></span>
+                </div>
+                <div class="change-item">
+                    <span class="change-label">7d</span>
+                    <span id="change-7d" class="change-value"></span>
+                </div>
+                <div class="change-item">
+                    <span class="change-label">Yesterday</span>
+                    <span id="change-yesterday" class="change-value"></span>
+                </div>
+            </div>
+            <hr>
+            <div class="signals-grid">
+                <div class="change-item">
+                    <span class="change-label">1h-pt4</span>
+                    <span id="pv-1h-pt4" class="change-value"></span>
+                    <span id="1h-pt4" class="change-value"></span>
+                </div>
+                <div class="change-item">
+                    <span class="change-label">1h-npt9</span>
+                    <span id="pv-1h-npt9" class="change-value"></span>
+                    <span id="1h-npt9" class="change-value"></span>
+                </div>
+                <div class="change-item">
+                    <span class="change-label">15m-pt4</span>
+                    <span id="pv-15m-pt4" class="change-value"></span>
+                    <span id="15m-pt4" class="change-value"></span>
+                </div>
+                <div class="change-item">
+                    <span class="change-label">15m-npt9</span>
+                    <span id="pv-15m-npt9" class="change-value"></span>
+                    <span id="15m-npt9" class="change-value"></span>
+                </div>
+            </div>
+        </div>
+        <div id="crypto-list" class="hidden rs-child">
+            <h2>TOP100</h2>
+            <div class="crypto-list-header">
+                <span class="header-index">#</span>
+                <span class="header-name">Name</span>
+                <span class="header-symbol">Symbol</span>
+                <span class="header-change">24h</span>
+                <span class="header-change">7d</span>
+            </div>
+            <div class="crypto-list-items"></div>
+        </div>
+    </div>
+    <script src="./assets/js/chart.umd.min.js"></script>
+    <script src="./assets/js/terminal.js"></script>
+</body>
+
+</html>
