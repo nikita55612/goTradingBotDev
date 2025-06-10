@@ -62,7 +62,7 @@ func Run(ctx context.Context) {
 	)
 	logger := slog.New(slogx.Fanout(
 		slog.NewJSONHandler(os.Stdout, nil),
-		telebot.NewBotSlogHandlerFromEnv("500295076", nil),
+		telebot.NewBotSlogHandlerFromEnv("", nil),
 	))
 	bot := trading.NewTradingBot(
 		ctx,
